@@ -1,0 +1,16 @@
+[Unit]
+Description=brodyocr for shadows SGS
+Before=network-pre.target
+Wants=network-pre.target
+After=dbus.service
+After=polkit.service
+
+[Service]
+WorkingDirectory=/home/brody_zhu@apac.global.sgs.com/Shadows
+ExecStart=/bin/sh /home/brody_zhu@apac.global.sgs.com/Shadows/brodyocr_en
+User=brody_zhu@apac.global.sgs.com
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target
